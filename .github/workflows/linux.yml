@@ -1,6 +1,7 @@
 name: Build Yubenbango Data Files
 
 on:
+  workflow_dispatch:
   schedule:
     # * is a special character in YAML, so you have to quote this string
     - cron: '0 0 1 * *' # run job on the first day of every month
