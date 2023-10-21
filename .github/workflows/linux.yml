@@ -1,4 +1,4 @@
-name: Build Yubenbango Data Files
+name: Build Yubenbango
 
 on:
   workflow_dispatch:
@@ -27,10 +27,10 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add -A
           timestamp=$(date -u)
-          git commit -m "Zipcode updated on ${timestamp} ${GITHUB_SHA}" || exit 0
+          git commit -m "Jurisdictions and zip codes updated on ${timestamp}" || exit 0
           git push
           echo "::set-output name=change_detected::1"
       - uses: actions/upload-artifact@v3
         with:
-          name: sqlite_db
+          name: yubenbango_sqlite_db
           path: data/yubenbango.zip
