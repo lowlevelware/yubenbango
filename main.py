@@ -25,7 +25,7 @@ FIELDS = ['jisx0402',  # 全国地方公共団体コード
 # Readme for jigyousho:
 # https://www.post.japanpost.jp/zipcode/dl/jigyosyo/readme.html
 
-JIGYOU_FIELDS = ['jis',  # some kind of jis code - README doesn't say which type
+JIGYOU_FIELDS = ['jis',  # see https://github.com/Rayraegah/gazetteer?tab=readme-ov-file#standard-grid-square-primary-area-partition
                  'kana',  # kana of business name
                  'name',  # business name
                  'prefecture', 'city', 'district',
