@@ -9,6 +9,9 @@ clean:
 	rm raw/*
 	rm data/*
 
+raw/gazetter.tsv:
+	wget -O raw/gazetter.tsv 'https://github.com/Rayraegah/gazetteer/raw/main/gazetteer.tsv'
+
 raw/ken_all.zip:
 	wget -O raw/ken_all.zip 'https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip'
 
@@ -25,5 +28,5 @@ raw/jigyousho.utf8.csv: raw/jigyosyo.zip
 	unzip -o jigyosyo.zip
 	iconv -f cp932 -t utf8 raw/JIGYOSYO.CSV > raw/jigyousho.utf8.csv
 
-data/yubenbango.sqlite: start raw/ken_all.utf8.csv raw/jigyousho.utf8.csv
+data/yubenbango.sqlite: start raw/gazetter.tsv raw/ken_all.utf8.csv raw/jigyousho.utf8.csv
 	python main.py
