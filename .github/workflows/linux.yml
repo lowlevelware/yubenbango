@@ -30,7 +30,7 @@ jobs:
           git commit -m "Jurisdictions and postal codes updated on ${timestamp}" || exit 0
           git push
           echo "::set-output name=change_detected::1"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: yubenbango_sqlite_db
           path: data/yubenbango.zip
